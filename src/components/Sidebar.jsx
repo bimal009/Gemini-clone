@@ -69,10 +69,24 @@ const Sidebar = () => {
           {Toogle && <p className={`font-bold text-black ${!Toogle && 'hidden'} md:inline`}>
             Recent
           </p>}
-          <div className={`flex items-center mt-3 ${!Toogle && 'hidden'}` }  >
-          <img className='w-[24px] h-[28px] object-contain font-sans text-xl' src={assets.message_icon} alt="" />
-          <p>{recentPrompt}</p>
-          </div>
+          <div className={`flex items-center mt-3 ${!Toogle && 'hidden'}`}>
+            <div className=''>
+
+            {previousPrompt.map((item, index) => (
+    <div className='flex items-center hover:bg-gray-200 px-3 py-2 w-full rounded-full' key={index}>
+      <img 
+        className='w-[24px] h-[28px] object-contain font-sans text-xl' 
+        src={assets.message_icon} 
+        alt="message icon" 
+      />
+      <div className='whitespace-nowrap overflow-hidden text-ellipsis'>
+        {item.length > 18 ? `${item.slice(0, 18)}...` : item}
+      </div>
+    </div>
+  ))}
+  </div>
+</div>
+
         </div>
       </div>
 
