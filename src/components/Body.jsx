@@ -1,9 +1,10 @@
 import React from 'react'
+import Nav from './Nav'
 
 const Body = () => {
   return (
     <div className="container">
-        <h1>Hello </h1>
+       <Nav/>
     </div>
   )
 }
