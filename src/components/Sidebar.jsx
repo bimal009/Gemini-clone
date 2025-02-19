@@ -2,58 +2,75 @@ import React, { useState } from 'react'
 import { assets } from '../assets/assets'
 
 const Sidebar = () => {
-  
   const [Toogle, setToogle] = useState(false)
-  const handleToggle=()=>{
-    setToogle(!Toogle )
-    console.log(Toogle)
-  }
-  return (
-    <>
-    
-    {!Toogle && <div className={Toogle?"icon flex items-center sticky":"icon flex items-center sticky justify-center mt-5 mx-3"}>
-
-
-    <img onClick={handleToggle} className='h-[24px] w-[20px] object-contain ' src={assets.menu_icon} alt="" />
-            </div>}
-
-
-    {Toogle && <div className='min-h-screen max-h-screen bg bg-[#F0F4F9] w-fit flex flex-col justify-between  py-9 px-8  items-center ' >
-      <div className="icon p flex flex-col justify-center items">
-        <div className={Toogle?"icon flex items-center sticky":"icon flex items-center sticky justify-center"}>
-
-
-<img onClick={handleToggle} className='h-[24px] w-[20px] object-contain ' src={assets.menu_icon} alt="" />
-        </div>
-        <div className="plus bg-[#E6EAF1]  rounded-full flex items-center justify-center gap-2 mt-9  text-xl px-5 py-4">
- 
-  <img className='h-[24px] w-[20px] object-contain ' src={assets.plus_icon} alt="plusicon" />
-  {Toogle && <p className='font-bold align-baseline whitespace-nowrap   text-[#989CA0] font-sans '>New Chat</p>}
-      </div>
-      <div className="plus  flex  mt-9 items-center
-
-">
   
-  {Toogle && <p className='font-bold text-black font-sans'>Recent</p>}
+  const handleToggle = () => {
+    setToogle(!Toogle)
+  }
+
+  return (
+    <div className={`min-h-screen max-h-screen bg-[#F0F4F9] flex flex-col justify-between py-9 px-4 items-center transition-all duration-300 
+      ${Toogle ? 'w-[250px]' : 'w-[80px]'} md:w-[250px]`}>
+      
+      {/* Top Section */}
+      <div className="w-full flex flex-col items-center">
+        {/* Menu Icon */}
+        <div className="w-full flex justify-start md:hidden">
+          <img 
+            onClick={handleToggle} 
+            className='h-6 w-5 object-contain cursor-pointer' 
+            src={assets.menu_icon} 
+            alt="menu" 
+          />
+        </div>
+
+        {/* New Chat Button */}
+        <div className={`bg-[#E6EAF1] rounded-full flex items-center mt-9 transition-all duration-300 
+          ${Toogle ? 'px-5 py-4 gap-3' : 'p-3'} md:px-5 md:py-4 md:gap-3`}>
+          <img 
+            className='h-[24px] w-[20px] object-contain' 
+            src={assets.plus_icon} 
+            alt="new chat" 
+          />
+          <p className={`font-bold text-[#989CA0] truncate ${!Toogle && 'hidden'} md:inline`}>
+            New Chat
+          </p>
+        </div>
+
+        {/* Recent Chats Title */}
+        <div className="w-full mt-9">
+          <p className={`font-bold text-black ${!Toogle && 'hidden'} md:inline`}>
+            Recent
+          </p>
+          <div className='flex items-center mt-3'>
+
+          <img className='w-[24px] h-[28px] object-contain font-sans text-xl' src={assets.message_icon} alt="" />
+          <p>Hello</p>
+          </div>
+        </div>
       </div>
-</div> 
 
-<div className="bottom inline-flex flex-col gap-4  justify-center ">
-  <div className="help flex gap-4 ">
-    <img className='h-[24px] w-[20px] object-contain ' src={assets.question_icon} alt="Help" />{ Toogle &&<p className='font-semibold  '>Help</p>}
-  </div>
-  <div className="Activities  flex gap-4 ">
-  <img className='h-[24px] w-[20px] object-contain ' src={assets.history_icon} alt="History" />{ Toogle &&<p className='font-semibold  '>Activities</p>}
-
-  </div>
-  <div className="Settings flex  gap-4">
-  <img className='h-[24px] w-[20px] object-contain'  src={assets.setting_icon} alt="setting" />{ Toogle &&<p className='font-semibold  '>Settings</p>}
+     
 
 
-  </div>
-</div>
-    </div>}
-    </>
+      {/* Bottom Section */}
+      <div className="w-full flex flex-col gap-4">
+        <div className="flex items-center gap-3">
+          <img className='h-6 w-5 object-contain' src={assets.question_icon} alt="help" />
+          <p className={`font-semibold ${!Toogle && 'hidden'} md:inline`}>Help</p>
+        </div>
+        
+        <div className="flex items-center gap-3">
+          <img className='h-6 w-5 object-contain' src={assets.history_icon} alt="history" />
+          <p className={`font-semibold ${!Toogle && 'hidden'} md:inline`}>Activities</p>
+        </div>
+        
+        <div className="flex items-center gap-3">
+          <img className='h-6 w-5 object-contain' src={assets.setting_icon} alt="settings" />
+          <p className={`font-semibold ${!Toogle && 'hidden'} md:inline`}>Settings</p>
+        </div>
+      </div>
+    </div>
   )
 }
 
