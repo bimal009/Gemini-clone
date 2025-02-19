@@ -25,10 +25,10 @@ const Sidebar = () => {
 
 <img onClick={handleToggle} className='h-[24px] w-[20px] object-contain ' src={assets.menu_icon} alt="" />
         </div>
-        <div className="plus bg-[#E6EAF1] py-4 px-5 rounded-full flex gap-2 mt-9 sm:py-3 sm:px-4 md:py-4 md:px-6 lg:py-5 lg:px-7">
+        <div className="plus bg-[#E6EAF1]  rounded-full flex items-center justify-center gap-2 mt-9  text-xl px-20 ">
  
   <img className='h-[24px] w-[20px] object-contain ' src={assets.plus_icon} alt="plusicon" />
-  {Toogle && <p className='font-bold text-[#989CA0] font-sans'>New Chat</p>}
+  {Toogle && <p className='font-bold text-[20px]  text-[#989CA0] font-sans '>New Chat</p>}
       </div>
       <div className="plus  flex  mt-9 items-center
 
