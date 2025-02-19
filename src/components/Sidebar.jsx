@@ -9,7 +9,16 @@ const Sidebar = () => {
     console.log(Toogle)
   }
   return (
-    <div className='min-h-screen bg bg-[#F0F4F9] w-fit flex flex-col justify-between  py-9 px-8  items-center' >
+    <>
+    
+    {!Toogle && <div className={Toogle?"icon flex items-center sticky":"icon flex items-center sticky justify-center mt-5 mx-3"}>
+
+
+    <img onClick={handleToggle} className='h-[24px] w-[20px] object-contain ' src={assets.menu_icon} alt="" />
+            </div>}
+
+
+    {Toogle && <div className='min-h-screen bg bg-[#F0F4F9] w-fit flex flex-col justify-between  py-9 px-8  items-center' >
       <div className="icon p flex flex-col justify-center items">
         <div className={Toogle?"icon flex items-center sticky":"icon flex items-center sticky justify-center"}>
 
@@ -43,7 +52,8 @@ const Sidebar = () => {
 
   </div>
 </div>
-    </div>
+    </div>}
+    </>
   )
 }
 

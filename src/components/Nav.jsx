@@ -3,9 +3,9 @@ import { assets } from '../assets/assets'
 
 const Nav = () => {
   return (
-    <div className="flex justify-center flex-col w-full">
+    <div className="flex justify-center flex-col ">
 
-    <div className='flex items-center justify-between mt-5'>
+    <div className='flex items-center justify-between mt-5 mx-10'>
       <div className="logo">
         {/* <img className='h-[80px] w-[100px] object-contain' src={assets.logo} alt="logo" />
          */}
