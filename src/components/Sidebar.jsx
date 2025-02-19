@@ -15,7 +15,7 @@ const Sidebar = () => {
       {/* Top Section */}
       <div className="w-full flex flex-col items-center">
         {/* Menu Icon */}
-        <div className="w-full flex justify-start md:hidden">
+        <div className="w-full flex justify-start ">
           <img 
             onClick={handleToggle} 
             className='h-6 w-5 object-contain cursor-pointer' 
@@ -42,7 +42,7 @@ const Sidebar = () => {
           <p className={`font-bold text-black ${!Toogle && 'hidden'} md:inline`}>
             Recent
           </p>
-          <div className='flex items-center mt-3'>
+          <div className={`flex items-center mt-3 ${!Toogle && 'hidden'}`} >
 
           <img className='w-[24px] h-[28px] object-contain font-sans text-xl' src={assets.message_icon} alt="" />
           <p>Hello</p>
