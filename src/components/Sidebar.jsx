@@ -42,8 +42,7 @@ const Sidebar = () => {
           <p className={`font-bold text-black ${!Toogle && 'hidden'} md:inline`}>
             Recent
           </p>
-          <div className={`flex items-center mt-3 ${!Toogle && 'hidden'}`} >
-
+          <div className={`flex items-center mt-3 ${!Toogle && 'hidden'}` }  >
           <img className='w-[24px] h-[28px] object-contain font-sans text-xl' src={assets.message_icon} alt="" />
           <p>Hello</p>
           </div>
